@@ -1,0 +1,156 @@
+<myLayout>
+    BoxLayout:
+        size: root.width,root.height
+        orientation:'vertical'
+        
+        TextInput:
+            id: cal_display
+            text:'0'
+            font_size: 65
+            size_hint:(1,.18 )
+            halign: "right"
+            padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+            # multiline: False
+            readonly: True
+
+
+        GridLayout:
+            cols: 4
+            rows: 5
+            
+            ########## ROW 1 ############
+            Button:
+                text:u"\u21BA"
+                size_hint: (.2,.2)
+                font_name: 'Symbola.ttf'
+                font_size: 32
+                on_press: root.history()
+            Button:
+                text:'C'
+                size_hint: (.2,.2)
+                font_size: 32
+                on_press: root.clear()
+            Button:
+                text:u"\u232B"
+                size_hint: (.2,.2)
+                font_name: 'Symbola.ttf'
+                font_size: 32
+                on_press: root.backSpace()
+            Button:
+                text:'÷'
+                size_hint: (.2,.2)
+                font_size: 32
+                on_press: root.add_optr('÷')
+                on_press: root.dynamicInput()
+            ########## ROW 2 ############
+            Button:
+                text:'1'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.inputNum(1)
+                on_press: root.dynamicInput()
+            Button:
+                text:'2'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.inputNum(2)
+                on_press: root.dynamicInput()
+            Button:
+                text:'3'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.inputNum(3)
+                on_press: root.dynamicInput()
+            Button:
+                text:'×'
+                size_hint: (.2,.2)
+                font_size: 32
+                on_press: root.add_optr('×')
+                on_press: root.dynamicInput()
+            ########## ROW 3 ############
+            Button:
+                text:'4'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.inputNum(4)
+                on_press: root.dynamicInput()
+            Button:
+                text:'5'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.inputNum(5)
+                on_press: root.dynamicInput()
+            Button:
+                text:'6'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.inputNum(6)
+                on_press: root.dynamicInput()
+            Button:
+                text:'-'
+                size_hint: (.2,.2)
+                font_size: 50
+                on_press: root.add_optr('-')
+                on_press: root.dynamicInput()
+            ########## ROW 4 ############
+            Button:
+                text:'7'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.inputNum(7)
+                on_press: root.dynamicInput()
+            Button:
+                text:'8'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.inputNum(8)
+                on_press: root.dynamicInput()
+            Button:
+                text:'9'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.inputNum(9)
+                on_press: root.dynamicInput()
+            Button:
+                text:'+'
+                size_hint: (.2,.2)
+                font_size: 32
+                on_press: root.add_optr('+')
+                on_press: root.dynamicInput()
+            ########## ROW 5 ############
+            Button:
+                text:'+/-'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.plus_minus()
+                on_press: root.dynamicInput()
+            Button:
+                text:'0'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.inputNum(0)
+                on_press: root.dynamicInput()
+            Button:
+                text:'.'
+                size_hint: (.2,.2)
+                font_size: 32
+                background_color: (157/255.0,157/255.0,157/255.0,1)
+                on_press: root.add_optr('.')
+                on_press: root.dynamicInput()
+            Button:
+                text:'='
+                size_hint: (.2,.2)
+                font_size: 32
+                on_press: root.calculate()
+                # on_press: root.clcu_demo()
